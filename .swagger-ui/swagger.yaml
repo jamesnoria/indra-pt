@@ -1,0 +1,88 @@
+openapi: "3.0.1"
+info:
+  title: "indra-pt-dev"
+  version: "2023-09-21T14:45:28Z"
+servers:
+- url: "https://tl6jn50nmk.execute-api.us-east-1.amazonaws.com/{basePath}"
+  variables:
+    basePath:
+      default: "dev"
+paths:
+  /api/v1/people:
+    get:
+      parameters:
+      - name: "page"
+        in: "query"
+        schema:
+          type: "string"
+      x-amazon-apigateway-integration:
+        httpMethod: "POST"
+        uri: "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:416633058408:function:indra-pt-dev-listPeople/invocations"
+        passthroughBehavior: "when_no_match"
+        type: "aws_proxy"
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/indraApiGafdJck4eN9Vp3"
+        required: true
+      x-amazon-apigateway-integration:
+        httpMethod: "POST"
+        uri: "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:416633058408:function:indra-pt-dev-createPeople/invocations"
+        passthroughBehavior: "when_no_match"
+        type: "aws_proxy"
+components:
+  schemas:
+    indraApiGafdJck4eN9Vp3:
+      required:
+      - "altura"
+      - "ano_nacimiento"
+      - "color_cabello"
+      - "color_ojos"
+      - "color_piel"
+      - "especies"
+      - "naves"
+      - "nombre"
+      - "peliculas"
+      - "peso"
+      - "sexo"
+      - "tierra_natal"
+      - "vehiculos"
+      type: "object"
+      properties:
+        color_cabello:
+          type: "string"
+        color_piel:
+          type: "string"
+        ano_nacimiento:
+          type: "string"
+        tierra_natal:
+          type: "string"
+        peso:
+          type: "string"
+        peliculas:
+          type: "array"
+          items:
+            type: "string"
+        color_ojos:
+          type: "string"
+        especies:
+          type: "array"
+          items:
+            type: "string"
+        naves:
+          type: "array"
+          items:
+            type: "string"
+        nombre:
+          type: "string"
+        vehiculos:
+          type: "array"
+          items:
+            type: "string"
+        altura:
+          type: "string"
+        sexo:
+          type: "string"
+x-amazon-apigateway-minimum-compression-size: 1024

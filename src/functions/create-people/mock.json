@@ -1,0 +1,16 @@
+{
+  "nombre": "James Noria",
+  "altura": "65.2",
+  "peso": "48.7",
+  "color_cabello": "black",
+  "color_piel": "brown",
+  "color_ojos": "blue",
+  "ano_nacimiento": "1995AD",
+  "sexo": "Male",
+  "tierra_natal": "Earth-32",
+  "peliculas": ["peli1", "peli2"],
+  "especies": ["especie1", "especie2"],
+  "vehiculos": ["carro1", "carro2"],
+  "naves": ["nave1", "nave2"],
+  "url": "https://jamesnoria.me"
+}

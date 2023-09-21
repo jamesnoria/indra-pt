@@ -1,0 +1,15 @@
+export type APIPeopleModel = {
+    nombre: string,
+    altura: string,
+    peso: string,
+    color_cabello: string,
+    color_piel: string,
+    color_ojos: string,
+    ano_nacimiento: string,
+    sexo: string,
+    tierra_natal: string,
+    peliculas: string[],
+    especies: string[],
+    vehiculos: string[],
+    naves: string[],
+}
